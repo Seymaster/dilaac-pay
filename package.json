@@ -1,0 +1,26 @@
+{
+  "name": "dilaac-pay",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -r dotenv/config app.js"
+  },
+  "author": "Alugbin Oluwaseyi",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-fetch": "^3.1.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "mongoose": "^6.3.2",
+    "mongoose-paginate": "^5.0.3",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.6",
+    "nodemon": "^2.0.16",
+    "randomstring": "^1.2.2",
+    "uuid": "^8.3.2"
+  }
+}
