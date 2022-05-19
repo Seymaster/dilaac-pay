@@ -11,8 +11,8 @@ const BusinessRouter = require("./Routes/business")
 mongoose.Promise = global.Promise;
 
 
-app.listen(PORT, (err)=> {
-    console.log(err)
+app.listen(PORT, ()=> {
+    console.log(`connected runing on ${PORT}`)
 })
 
 
