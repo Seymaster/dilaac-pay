@@ -5,7 +5,7 @@ const PORT    = process.env.PORT || 8080;
 const logger  = require("morgan");
 const cors    = require("cors");
 const mongoose = require("mongoose")
-const config   = require("./config/mongo");
+const config   = require("./Config/mongo");
 const BusinessRouter = require("./Routes/business")
 
 mongoose.Promise = global.Promise;
