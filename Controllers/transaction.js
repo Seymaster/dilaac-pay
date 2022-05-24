@@ -1,4 +1,4 @@
-const TransactionRepository = require("../models/TransactionRepository");
+const TransactionRepository = require("../Models/TransactionRepository");
 const ProjectRepository = require("../Models/ProjectRepository");
 const CustomerRepository = require("../Models/CustomerRepository")
 const randomString = require("randomstring");
