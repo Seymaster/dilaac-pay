@@ -9,7 +9,7 @@ class ProjectRepository extends Repository{
     }
 
     nonMetaFields(){
-        return ["userId","ProjectId","ProjectName","mobileNumber","countryCode","emailAddress","currentBalance","ledgerBalance"]
+        return ["userId","ProductId","ProjectName","mobileNumber","countryCode","emailAddress","currentBalance","ledgerBalance"]
     }
 }
 

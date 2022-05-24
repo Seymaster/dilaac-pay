@@ -22,6 +22,14 @@ const projectSchema = {
     }).options({ allowUnknown: true })
 }
 
+const transactionSchema = {
+    transactionPost: Joi.object().keys({
+        projectId: Joi.string().required(),
+        amount: Joi.string().required(),
+        mobileNumber: Joi.string().required()
+    }).options({ allowUnknown: true })
+}
 
 
-module.exports = { businessSchema, projectSchema }
+
+module.exports = { businessSchema, projectSchema, transactionSchema }

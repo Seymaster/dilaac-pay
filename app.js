@@ -7,6 +7,7 @@ const cors    = require("cors");
 const mongoose = require("mongoose")
 const config   = require("./Config/mongo");
 const BusinessRouter = require("./Routes/business")
+const transactionRouter = require("./Routes/transaction")
 
 mongoose.Promise = global.Promise;
 
@@ -20,6 +21,7 @@ app.use(logger("dev")); //can't save
 app.use(express.json());
 app.use(cors({origin: "*"}));
 app.use("/api/v1", BusinessRouter)
+app.use("/api/v1", transactionRouter)
 
 mongoose.set("debug", true)
 
