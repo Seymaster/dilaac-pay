@@ -1,6 +1,5 @@
 const BusinessRepository = require("../Models/BusinessRepository")
 const ProjectRepository = require("../Models/ProjectRepository")
-const LinkRepository = require("../Models/LinkRepository")
 const { createProduct } = require("../Services/product");
 const uuid = require("uuid");
 const randomString = require("randomstring")

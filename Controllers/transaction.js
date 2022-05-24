@@ -3,7 +3,7 @@ const ProjectRepository = require("../Models/ProjectRepository");
 const CustomerRepository = require("../Models/CustomerRepository")
 const randomString = require("randomstring");
 const { createInvoice } = require("../Services/invoice");
-const { createUser, createNewUser } = require("../Services/user");
+const {  createNewUser } = require("../Services/user");
 
 
 exports.initiatePayment = async (req,res,next)=>{
