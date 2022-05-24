@@ -25,8 +25,8 @@ exports.createBusiness = async (req,res,next)=>{
     let newBusiness = { userId,businessId,businessName,projectName,mobileNumber,countryCode,emailAddress}
     let newProject = {userId,productId,projectName,mobileNumber,countryCode,emailAddress}
     try{
-        await ProjectRepository.create(newProject)
         let Business = await BusinessRepository.create(newBusiness)
+        await ProjectRepository.create(newProject)
         return res.status(200).send({
             status:200,
             message: "Business Registered successfully",
