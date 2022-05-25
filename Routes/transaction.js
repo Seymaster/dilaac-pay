@@ -21,6 +21,8 @@ router.post("/pay/initiate",transactionController.initiatePayment, validate(sche
 
 router.get("/transaction", transactionController.getTransaction)
 
+router.get("/transaction/detail/:reference", transactionController.getTransactionByReference)
+
 // router.get("/customer" ,validate(schema.projectSchema.projectPost, 'body'),transactionController.createProject);
 
 

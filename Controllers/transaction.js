@@ -90,6 +90,35 @@ exports.getTransaction = async (req,res,next)=>{
     }
 };
 
+// To get transaction by reference 
+exports.getTransactionByReference = async (req,res,next)=>{
+    let { reference } = req.params;
+    try{
+        let Transaction = await TransactionRepository.findOne({reference: reference})
+        if(Transaction === null || 0){
+            return res.status(400).send({
+                status: 404,
+                message: `No Transaction found for this reference ${reference}`,
+                data: Transaction
+            })
+        }
+        else{
+            return res.status(400).send({
+                status: 200,
+                message: "Transaction loaded successfully",
+                data: Transaction
+            })
+        }
+    }catch(err){
+        return res.status(400).send({
+            status: 400,
+            message: "Bad Request",
+            error: err
+        })
+    }
+};
+
+
 // To get all Customer for a Particular Project
 exports.getCustomers = async (req,res,next)=>{
     let {...query} = req.query;
