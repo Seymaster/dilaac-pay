@@ -4,14 +4,15 @@ const mongoose = require("mongoose")
 const mongoosePaginate = require("mongoose-paginate");
 
 const Schema    = mongoose.Schema({
-    userId: {type: String, require: true},
+    reference: {type: String, require: true},
+    invoiceId: {type: String, require: false, default: null},
+    customerId: {type: String, require: true},
+    phoneNumber: {type: String, require: true},
+    amount: {type: String, required: true},
     projectId: {type: String, require: true},
-    reference: {type: String, require: true, unique: true},
-    description: {type: String, require: false},
-    amount: {type: String, require: false},
-    meta: {type: Object},
+    status: {type: String, require: false, default: "PENDING"},
     createdAt: {type: Date, default: Date.now},
-    updatedAt: {type: Date}
+    updatedAt: {type: Date, default: null}
 }, 
 {
     toJSON: {
@@ -21,11 +22,12 @@ const Schema    = mongoose.Schema({
             delete ret._id;
         }
     }
-});
-
+}
+);
 Schema.index({"$**":"text"});
 Schema.plugin(mongoosePaginate);
-const Link =  mongoose.model("Link", Schema)
+const Transaction =  mongoose.model("Transaction", Schema)
 
 
-module.exports = Link;
+
+module.exports = Transaction;

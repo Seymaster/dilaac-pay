@@ -12,18 +12,19 @@
 
 const express = require("express");
 const router  = express.Router();
-const businessController = require("../Controllers/business")
+const transactionController = require("../Controllers/transaction")
 const schema = require("../Middleware/schema");
 const { validate } = require("../Middleware/helper");
 
 
-router.post("/business/create", validate(schema.businessSchema.businessPost, 'body'), businessController.createBusiness);
+router.post("/pay/initiate",transactionController.initiatePayment, validate(schema.transactionSchema.transactionPost, 'body'), );
 
-router.get("/business", businessController.getBusiness)
+router.get("/transaction", transactionController.getTransaction)
 
-router.post("/project/create" ,validate(schema.projectSchema.projectPost, 'body'),businessController.createProject);
+router.get("/transaction/detail/:reference", transactionController.getTransactionByReference)
 
-router.get("/project", businessController.getProject)
+// router.get("/customer" ,validate(schema.projectSchema.projectPost, 'body'),transactionController.createProject);
+
 
 
 

@@ -5,7 +5,7 @@ const mongoosePaginate = require("mongoose-paginate");
 
 const Schema    = mongoose.Schema({
     userId: {type: String, require: true},
-    projectId: {type: String, require: true, unique: true},
+    productId: {type: String, require: true, unique: true},
     projectName: {type: String, require: true, unique: true},
     mobileNumber: {type: String, require: true},
     countryCode: {type: String, require: true},
